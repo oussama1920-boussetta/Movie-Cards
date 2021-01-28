@@ -3,12 +3,12 @@ import  React  from "react";
 import {RunCrd} from './MovieCard/MovieCard'
 import  Add  from "./Add/Add";
 
-function Main ({movies, setMovies})  {
+function Main ({movies, setMovies,AddNewMovie})  {
     return(
         <div className='Cardo'>
         {/* {movies.map(RunCrd)} */}
         {movies.map((el, i)=><RunCrd movie={el} key={i} />)}
-        <Add setMovies={setMovies} />
+        <Add setMovies={setMovies} AddNewMovie={AddNewMovie} />
         </div>
 
     )

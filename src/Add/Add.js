@@ -16,7 +16,6 @@ const Add = ({ AddNewMovie }) => {
         setNewMovie({ ...newMovie, [e.target.name]: e.target.value });
     };
 
-    AddNewMovie = { AddNewMovie }
 
     const [show, setShow] = useState(false);
 
@@ -35,25 +34,25 @@ const Add = ({ AddNewMovie }) => {
                 </Modal.Header>
                 <Modal.Body className='Add'>
                     <div className='AddTitre'>
-                        <label> Name</label>
-                        <input type="text" name="titre" onChange={handleChange} required /><br></br></div>
+                        <label> Nom:</label>
+                        <input type="text" name="titre"className='nom' onChange={handleChange} required /><br></br></div>
                     <div className='AddRating'>
-                        <label> Rate</label>
-                        <input type="text" name="rating" onChange={handleChange} required /><br></br></div>
+                        <label> Rate:</label>
+                        <input type="text" name="rating"className='rate' onChange={handleChange} required /><br></br></div>
 
                     <div className='AddImage'>
-                        <label> Image</label>
-                        <input type="text" name="image" onChange={handleChange} required /><br></br></div>
+                        <label> Image:</label>
+                        <input type="url" name="image"className='image' onChange={handleChange} required /><br></br></div>
                     <div className='Addsynopsis'>  
-                        <label> synopsis</label>
-                        <input type="text" name="synopsis" onChange={handleChange} required /></div>
+                        <label> synopsis:</label>
+                        <input type="text" name="synopsis"className='synopsis' onChange={handleChange} required /></div>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
             </Button>
                     <Button variant="primary" onClick={() => {
-                        AddNewMovie(newMovie)
+                        AddNewMovie(newMovie);
                         handleClose()
                     }}>
                         Save Changes

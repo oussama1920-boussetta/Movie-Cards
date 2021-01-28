@@ -2,7 +2,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from "../src/Nav/Nav";
 import Main from './Main'
-import  Add  from "../src/Add/Add";
 
 import React, { useState } from "react";
 
@@ -17,6 +16,7 @@ function App() {
   const [myRate, setMyRate] = useState(0);
   const [myInput, setMyInput] = useState("");
   const [movies, setMovies] = useState(CardInfo);
+
   const AddNewMovie=(x)=>{setMovies([...movies, x])}
   return (
 
@@ -35,6 +35,11 @@ function App() {
        
       </div>
       <div >
+
+
+
+
+        
         <Main movies={movies.filter(
           (el) =>
             el.titre.toLowerCase().includes(myInput.toLowerCase().trim()) && el.rating >= myRate)} AddNewMovie={AddNewMovie}
